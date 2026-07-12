@@ -81,7 +81,7 @@ Which hospital has the highest medical expenses (useful for budget review)
 How long patients stay on average, and who had the longest stay (useful for spotting inefficiencies or bottlenecks)
 Monthly expense trends (useful for financial planning)
 
-**screenshot**
+##screenshot
 
 --
 
