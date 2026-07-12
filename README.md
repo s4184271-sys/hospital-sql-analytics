@@ -80,6 +80,11 @@ Which departments have the most/least patients (useful for staffing decisions)
 Which hospital has the highest medical expenses (useful for budget review)
 How long patients stay on average, and who had the longest stay (useful for spotting inefficiencies or bottlenecks)
 Monthly expense trends (useful for financial planning)
+
+**screenshot**
+
+--
+
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/89f0df77-0461-4bd8-8f09-9f47e159c793" />
 <img width="500" height="500" alt="Screenshot 2026-07-12 121843" src="https://github.com/user-attachments/assets/7ba8a30d-807a-4dc9-b9d7-4a28dd2f127c" />
 
