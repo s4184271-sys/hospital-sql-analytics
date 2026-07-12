@@ -70,3 +70,13 @@ records across multiple hospitals, cities, and departments.
 - Date arithmetic (length of stay)
 - Date formatting and monthly grouping
 - Handling divide-by-zero with `NULLIF`
+Problem:
+Hospitals collect large amounts of raw data — patient visits, admission/discharge dates, department records, medical expenses — but this data is not useful on its own. Hospital administrators need answers to questions like: Which departments are overloaded with patients? Which hospitals are the most expensive to run? How long do patients typically stay? Without querying the data properly, this information stays buried in the raw records and can't inform decisions like staffing, budgeting, or resource allocation.
+Solution:
+This project uses SQL to turn raw hospital records into actionable insights. Using aggregate functions (SUM, AVG, MAX), grouping, sorting, and date calculations, it answers 10 real-world hospital management questions, such as:
+
+How many patients are being treated overall and per city
+Which departments have the most/least patients (useful for staffing decisions)
+Which hospital has the highest medical expenses (useful for budget review)
+How long patients stay on average, and who had the longest stay (useful for spotting inefficiencies or bottlenecks)
+Monthly expense trends (useful for financial planning)
