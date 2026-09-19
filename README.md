@@ -1,90 +1,85 @@
-# Hospital Analytics – SQL Project
+# Hospital Analytics — PostgreSQL & SQL
 
-A portfolio SQL project demonstrating data analysis on a hospital records
-dataset using PostgreSQL. The project covers aggregation, ranking, date
-arithmetic, and reporting queries commonly asked in SQL interviews.
+A SQL analytics project using PostgreSQL to analyze hospital records and answer practical questions around patient volume, medical expenses, department workload, and length of stay.
+
+## Project Overview
+
+The project works with a `hospitals` table containing patient, hospital, department, doctor, expense, admission-date, and discharge-date information.
+
+### Questions Solved
+
+1. What is the total number of patients across all hospitals?
+2. What is the average number of doctors available at each hospital?
+3. Which three departments have the highest patient volume?
+4. Which hospital has the highest total medical expenses?
+5. What is the average medical expense per day of stay for each hospital?
+6. Which patient had the longest hospital stay?
+7. Which cities treated the most patients?
+8. What is the average length of stay for each department?
+9. Which department has the lowest patient volume?
+10. How do medical expenses vary month by month?
+
+## Solution
+
+SQL queries were used to transform raw hospital records into summarized information that can support operational analysis.
+
+The project demonstrates:
+- Aggregation with `SUM`, `AVG`, `MAX`, and `COUNT`
+- `GROUP BY` and `ORDER BY`
+- Top/bottom analysis with `LIMIT`
+- Date arithmetic for length-of-stay calculations
+- Monthly grouping with `DATE_TRUNC` and `TO_CHAR`
+- `NULLIF` to avoid division-by-zero errors
+
+## Dataset
+
+The repository contains a sample hospital dataset with 20 records covering multiple hospitals, cities, and departments.
+
+| Column | Type | Description |
+|---|---|---|
+| `record_id` | SERIAL | Unique record identifier |
+| `patient_name` | VARCHAR | Patient name |
+| `hospital_name` | VARCHAR | Hospital |
+| `location_name` | VARCHAR | City |
+| `department` | VARCHAR | Department/ward |
+| `doctors_count` | INT | Doctors available |
+| `patients_count` | INT | Patients recorded |
+| `medical_expenses` | NUMERIC | Medical expenses |
+| `admission_date` | DATE | Admission date |
+| `discharge_date` | DATE | Discharge date |
+
+Because this is a small sample dataset, the results are intended for SQL practice and portfolio demonstration rather than real-world hospital benchmarking.
 
 ## Project Structure
 
 ```
 hospital-sql-analytics/
-├── README.md          # This file
-├── schema.sql         # Table definition
-├── sample_data.sql     # Sample records to run the queries against
-└── queries.sql         # 10 analytical SQL queries with explanations
+├── README.md
+├── schema.sql
+├── sample_data.sql
+└── queries.sql
 ```
-
-##  Dataset
-
-The project uses a single `hospitals` table representing patient visit
-records across multiple hospitals, cities, and departments.
-
-| Column           | Type          | Description                              |
-|------------------|---------------|-------------------------------------------|
-| record_id        | SERIAL (PK)   | Unique record identifier                  |
-| patient_name      | VARCHAR       | Name of the patient                       |
-| hospital_name     | VARCHAR       | Hospital where the patient was treated    |
-| location_name     | VARCHAR       | City where the hospital is located        |
-| department        | VARCHAR       | Department/ward (e.g. Cardiology)         |
-| doctors_count     | INT           | Doctors available at the hospital/dept    |
-| patients_count    | INT           | Patients recorded in that visit/dept      |
-| medical_expenses  | NUMERIC       | Total medical expenses for the visit      |
-| admission_date    | DATE          | Date the patient was admitted             |
-| discharge_date    | DATE          | Date the patient was discharged           |
 
 ## How to Run
 
-1. Create a PostgreSQL database (or use an existing one).
-2. Run the schema and sample data:
+1. Create or open a PostgreSQL database.
+2. Run the schema:
    ```bash
    psql -d your_db -f schema.sql
+   ```
+3. Load the sample data:
+   ```bash
    psql -d your_db -f sample_data.sql
    ```
-3. Run the analysis queries:
+4. Run the analytical queries:
    ```bash
    psql -d your_db -f queries.sql
    ```
 
-> Written for PostgreSQL (uses `TO_CHAR`, `DATE_TRUNC`, date subtraction).
-> Minor syntax tweaks may be needed for MySQL/SQL Server (noted inline
-> where relevant).
+## Tools
 
-##  Queries Included
+**PostgreSQL · SQL**
 
-1. Total number of patients across all hospitals
-2. Average number of doctors per hospital
-3. Top 3 departments with the highest number of patients
-4. Hospital with the maximum medical expenses
-5. Daily average medical expenses per hospital
-6. Longest hospital stay
-7. Total patients treated per city
-8. Average length of stay per department
-9. Department with the lowest number of patients
-10. Monthly medical expenses report
+## Screenshots
 
-## Skills Demonstrated
-
-- Aggregate functions (`SUM`, `AVG`, `MAX`, `COUNT`)
-- `GROUP BY` and `ORDER BY`
-- `LIMIT` for top-N / bottom-N analysis
-- Date arithmetic (length of stay)
-- Date formatting and monthly grouping
-- Handling divide-by-zero with `NULLIF`
-Problem:
-Hospitals collect large amounts of raw data — patient visits, admission/discharge dates, department records, medical expenses — but this data is not useful on its own. Hospital administrators need answers to questions like: Which departments are overloaded with patients? Which hospitals are the most expensive to run? How long do patients typically stay? Without querying the data properly, this information stays buried in the raw records and can't inform decisions like staffing, budgeting, or resource allocation.
-Solution:
-This project uses SQL to turn raw hospital records into actionable insights. Using aggregate functions (SUM, AVG, MAX), grouping, sorting, and date calculations, it answers 10 real-world hospital management questions, such as:
-
-How many patients are being treated overall and per city
-Which departments have the most/least patients (useful for staffing decisions)
-Which hospital has the highest medical expenses (useful for budget review)
-How long patients stay on average, and who had the longest stay (useful for spotting inefficiencies or bottlenecks)
-Monthly expense trends (useful for financial planning)
-
-## screenshot
-
----
-
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/89f0df77-0461-4bd8-8f09-9f47e159c793" />
-<img width="500" height="500" alt="Screenshot 2026-07-12 121843" src="https://github.com/user-attachments/assets/7ba8a30d-807a-4dc9-b9d7-4a28dd2f127c" />
-
+The repository includes screenshots of the SQL analysis/results.
